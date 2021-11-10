@@ -1,2 +1,2 @@
-# EDAMS /ᐠ｡ꞈ｡ᐟ\
-행안부 경남 연구과제, 지진피해평가 관리시스템 (Earthquake Damage Assessment&amp;Management System)
+# 지능형 상황관리 시스템 ヾ(•ω•`)o
+국립재난안전연구원 지진통합관리시스템 성능개선사업
