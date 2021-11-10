@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">시스템관리</a></li>
+        <li>알람설정</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>알람설정</b></h2>
+    </div>
+    <div class="section">
+      <div class="tbl_wrap">
+        <div class="tbl_top">
+          <div class="btn_wrap">
+             <button type="button" class="btn btn_blueline">추가</button>
+          <button type="button" class="btn btn_grayline">선택삭제</button>        
+          </div>
+        </div>
+        <table id="jqGrid1" class="jq-grid"></table>
+        <div id="jqGridPager1"></div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+
+<script>
+var mydata1=[
+  {"t1":"","t2":"","t3":"","t4":"","t5":"#ff0505","t6":"Y","t7":"Y","t8":""},
+  {"t1":"","t2":"","t3":"","t4":"","t5":"#ffca3b","t6":"N","t7":"N","t8":""},
+];
+var grid1 = $("#jqGrid1");
+grid1.jqGrid({
+    data: mydata1,
+    datatype: "local",
+    colModel: [
+      {label: "순번", name: 't1', width: 40},
+      {label: "알람명", name: 't2', width: 100 },
+      {label : "구분", name: 't3', width: 100 },
+      {label : "임계치(gal)", name: 't4', width: 100 },
+      {label : "색상(Hexa)", name: 't5', width: 100, formatter: cp },
+      {label : "경보음", name: 't6', width: 40, formatter: btn_ox },
+      {label : "사용여부", name: 't7', width: 40, formatter: btn_yn},
+      {label : "등록일시", name: 't8',width: 100 },
+      {label: "설정자", name: "t9", width: 100},
+      {label: "상세/수정", name: "t10", width: 40, formatter: btn_dtl}
+    ],
+    loadonce : true,
+    viewrecords: true,
+    height: 520,
+    multiselect: true,
+    rowTotal: -1,
+    pager: "#jqGridPager1",
+    jsonReader : {repeatitems : false}
+  });
+  function cp(cellValue, options, rowdata, action){
+    var html;
+      html = '<span class="i_cp" style="background-color:'+cellValue+'">선택색상</span>'+cellValue+'';
+    return html;
+  }
+  function btn_yn(cellValue, options, rowdata, action){
+    var html, col;
+      (cellValue === "Y") ? col = "t_pink" : col = "t_gray";
+      html = '<b class="t_upper '+ col +'">'+ cellValue +'</b>';
+      return html;
+  }
+  function btn_ox(cellValue, options, rowdata, action){
+    var html, val;
+      (cellValue === "Y") ? val = "btn_o" : val = "btn_x";
+      html = '<span class="btn_ico_only '+ val +'">'+ cellValue +'</span>';
+      return html;
+  }
+  function btn_dtl(cellValue, options, rowdata, action){
+    var html;
+      html = '<button type="button" class="btn_ico_only btn_dtl" onclick="' + cellValue + ' "title="상세보기">상세보기</button>';
+    return html;
+  }
+  jqgridInit();
+</script>
+</body>
+</html>

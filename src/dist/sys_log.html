@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">시스템관리</a></li>
+        <li>시스템로그</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>시스템로그</b></h2>
+    </div>
+    <div class="section">
+      <div class="search">
+        <ul>
+          <li>
+            <span class="period period_multi">
+              <input type="text" name="date1" class="date from" dataformat="from" />
+              <input type="text" name="date1" class="date to" dataformat="to" />
+            </span>
+          </li>
+          <li>
+            <button type="button" class="btn btn_gray">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="link_h">      
+        <div class="tbl_wrap">
+          <table id="jqGrid1" class="jq-grid"></table>
+        </div>
+        <div class="section log_preview">
+          <div class=" tit_h3">
+            <h3>파일내용</h3>
+            <div class="btn_wrap btn_wrap_s">
+              <button type="button" class="btn_ico btn_grayline btn_txt">TXT저장</button>
+            </div>
+          </div>
+          <div class="box_gray">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+<script>
+var mydata1=[
+  {"t1":"","t2":"","t3":""}
+];
+var grid1 = $("#jqGrid1");
+grid1.jqGrid({
+    data: mydata1,
+    datatype: "local",
+    colModel: [
+      {label: "생성시각", name: 't1', width: 100},
+      {label: "파일명", name: 't2', width: 100 },
+      {label : "크기", name: 't3', width: 100 }
+    ],
+    loadonce : true,
+    viewrecords: true,
+    height: 540,
+    rownumbers: true,
+    rownumWidth: 25,
+    rowTotal: -1,
+    jsonReader : {repeatitems : false}
+  });
+  jqgridInit();
+</script>
+</body>
+</html>

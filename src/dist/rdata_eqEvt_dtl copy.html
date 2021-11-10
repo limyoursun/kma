@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">지진발생현황</a></li>
+        <li><a href="#">지진 발생정보</a></li>
+        <li>지진정보 상세보기</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>지진정보</b> 상세보기</h2>
+      <button type="button" class="btn btn_gray">목록</button>
+    </div>
+    <div class="flex_wrap f_sb eqEvt_dtl">
+      <div class="section ">
+        <table class="tbl_row">
+          <tr>
+            <th scope="row">지진번호</th>
+            <td colspan="3">2020081216</td>
+          </tr>
+          <tr>
+            <th scope="row">발생시각</th>
+            <td>2018-08-05 12:34:56</td>
+            <th scope="row">규모</th>
+            <td>2.0</td>
+          </tr>
+          <tr>
+            <th scope="row">발생위치</th>
+            <td colspan="3">경북 포항시 북구 북쪽 9㎞ 지역
+            </td>
+          </tr>
+        </table>
+        <div class="gis_wrap">
+          <div class="gis_area">
+            <img src="http://placehold.it/500x388" width="100%" height="100%" alt="지도 영역" />
+            <i class="i_status" mag="8" style="left:100px;top:200px;">Ⅶ</i>     
+            <i class="i_status i_all" style="left:100px;top:300px;">미수신</i>     
+            <i class="i_status i_check" style="left:200px;top:350px;">점검중</i>     
+          </div>
+          <div class="layer">
+            <div class="tit">
+              <h3>경기-분당(BAG)</h3>
+              <button type="button" class="axi btn_close">닫기</button>
+            </div>
+            <div class="body">
+              <dl class="dot_dl_list">
+                <dt>감지시간</dt>
+                <dd>2019-05-06 12:23:34</dd>
+                <dt>PGA</dt>
+                <dd>15.95 gal</dd>
+                <dt>진도</dt>
+                <dd class="i_status" mag="3">Ⅲ</dd>
+              </dl>
+            </div>
+          </div>
+          <div class="legend">
+            <h3>진도범례</h3>
+            <ul>
+              <li class="i_status" mag="10">Ⅹ+</li>
+              <li class="i_status" mag="9">Ⅸ</li>
+              <li class="i_status" mag="8">Ⅷ</li>
+              <li class="i_status" mag="7">Ⅶ</li>
+              <li class="i_status" mag="6">Ⅵ</li>
+              <li class="i_status" mag="5">Ⅴ</li>
+              <li class="i_status" mag="4">Ⅳ</li>
+              <li class="i_status" mag="3">Ⅲ</li>
+              <li class="i_status" mag="2">Ⅱ</li>
+              <li class="i_status" mag="1">Ⅰ</li>
+            </ul>
+            <ul class="divide">
+              <li class="i_status i_no">미관측</li>
+              <li class="i_status i_check">점검중</li>
+              <li class="i_status i_quake">진앙지</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="section section_r">
+        <div class="tab" tabBtn>
+          <ul class="tab_list">
+            <li class="on"><a href="#">관측소별 PGA</a></li>
+            <li><a href="#">파형전송현황</a></li>
+            <li><a href="#">파형조회</a></li>
+          </ul>
+        </div>
+        <div class="tab_conts" tabConts>
+          <div class="tab_cont" tabCont>
+            <div class="tbl_wrap">
+              <div class="tbl_top">
+                <div class="btn_wrap">
+                  <button type="button" class="btn_ico btn_greenline btn_excel">엑셀저장</button>
+                </div>
+              </div>
+              <table id="jqGrid1" class="jq-grid"></table>
+              <div class="box_help mgt_present">
+                <h3>관측소 감지현황 (개소)</h3>
+                <dl class="flex_wrap">
+                  <dt>진도별</dt>
+                  <dd class="mag1">Ⅰ<b class="val">30</b></dd>
+                  <dd class="mag2">Ⅱ<b class="val">10</b></dd>
+                  <dd class="mag3">Ⅲ<b class="val">5</b></dd>
+                  <dd class="mag4">Ⅳ<b class="val">1</b></dd>
+                  <dd class="mag5">Ⅴ<b class="val">0</b></dd>
+                  <dd class="mag6">Ⅵ<b class="val">0</b></dd>
+                  <dd class="mag7">Ⅶ<b class="val">0</b></dd>
+                  <dd class="mag8">Ⅷ<b class="val">0</b></dd>
+                  <dd class="mag9">Ⅸ<b class="val">0</b></dd>
+                  <dd class="mag10">Ⅹ+<b class="val">0</b></dd>
+                  <dd class="i_status i_no">미관측<b class="val">3</b></dd>
+                  <dd class="i_status i_check">점검중<b class="val">5</b></dd>
+                </dl>
+                <dl class="flex_wrap">
+                  <dt>등급별</dt>
+                  <dd class="tbl_tag_evt evt1">관심 <b class="val">3</b></dd>
+                  <dd class="tbl_tag_evt evt2">주의 <b class="val">3</b></dd>
+                  <dd class="tbl_tag_evt evt3">경계 <b class="val">3</b></dd>
+                  <dd class="tbl_tag_evt evt4">심각 <b class="val">3</b></dd>
+                </dl>
+              </div>
+            </div>
+          </div>
+          <div class="tab_cont" tabCont>
+            <div class="tbl_wrap">
+              <div class="tbl_top">
+                <div class="btn_wrap">
+                  <button type="button" class="btn_ico btn_greenline btn_excel">엑셀저장</button>
+                </div>
+              </div>
+              <table id="jqGrid2" class="jq-grid"></table>
+            </div>
+          </div>
+          <div class="tab_cont" tabCont>
+            <div class="search">
+              <ul>
+                <li>
+                  <select name="" id="" title="지역본부">
+                    <option value="">지역본부</option>
+                  </select>
+                </li>
+                <li>
+                  <select name="" id="" title="관측소 전체">
+                    <option value="">관측소 전체</option>
+                  </select>
+                </li>
+                <li class="in_label">
+                  <span class="label">구분</span>
+                  <label for="PGA"><input type="radio" name="wave_type" id="PGA"/>PGA</label>
+                  <label for="mini-SEED(100)"><input type="radio" name="wave_type" id="mini-SEED(100)"/>mini-SEED(100)</label>
+                  <label for="mini-SEED(20)"><input type="radio" name="wave_type" id="mini-SEED(20)"/>mini-SEED(20)</label>
+                </li>
+                <li>
+                  <button type="button" class="btn btn_gray">검색</button>
+                </li>
+              </ul>
+            </div>
+            <div class="chart_wrap">
+            <div class="loadingio-spinner-dual-ring-av112l9zdz loading">
+              <div class="loading_wrap">
+                <div></div><div><div></div></div>
+              </div>
+            </div>
+              <!-- <div class="loading">                
+              </div> -->
+              <div class="chart_area">
+                <img src="http://placehold.it/1300x480" width="100%" height="480px" alt="차트영역">
+              </div>
+              <div class="paginate">
+  <a href="#" class="first" title="처음">〈〈</a>
+  <a href="#" class="pre" title="이전">〈</a>
+  <span>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <strong>6</strong>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">9</a>
+  <a href="#">10</a>
+  </span>
+  <a href="#" class="next" title="다음">〉</a>
+  <a href="#" class="last" title="마지막">〉〉</a>
+</div>
+            </div>
+
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+<script>
+var mydata1=[
+  {"t1":"경기","t2":"발안","t3":"BAG","t4":"2013-05-15 22:12:32","t5":"0.008","t6":"2.59932","t7":"Ⅱ"},
+  {"t1":"경기","t2":"분당","t3":"BOG","t4":"2013-05-15 22:12:32","t5":"0.008","t6":"2.59932","t7":"Ⅱ"}
+];
+var grid1 = $("#jqGrid1");
+grid1.jqGrid({
+    data: mydata1,
+    datatype: "local",
+    colModel: [
+      { label: "지역", name: 't1', width: 80},
+      { label: "관측소명", name: 't2', width: 100 },
+      { label : "관측소코드", name: 't3', width: 80 },
+      { label : "감지시간", name: 't4', width: 130 },
+      { label : "진앙거리(㎞)", name: 't5',width: 80 },
+      { label : "최대가속도(gal)", name: 't6', width: 80},
+      { label: "진도", name: "t7", width: 80}
+    ],
+    loadonce : true,
+    viewrecords: true,
+    height: 403,
+    rowTotal: -1
+  });
+var mydata2=[
+  {"t1":"경기","t2":"발안","t3":"BAG","t4":"aa.tar","t5":"2013-05-15 22:12:32","t6":"2013-05-15 22:12:32","t7":"다운로드경로"},
+  {"t1":"경기","t2":"분당","t3":"BOG","t4":"aa.tar","t5":"2013-05-15 22:12:32","t6":"2013-05-15 22:12:32","t7":"다운로드경로"}
+];
+var grid2 = $("#jqGrid2");
+grid2.jqGrid({
+  data: mydata2,
+  datatype: "local",
+  colModel: [
+    { label: "지역", name: 't1', width: 80},
+    { label: "관측소명", name: 't2', width: 100 },
+    { label : "관측소코드", name: 't3', width: 80 },
+    { label : "이벤트파일명", name: 't4', width: 180, align:"left"},
+    { label : "생성시간", name: 't5',width: 130 },
+    { label : "전송시간", name: 't6', width: 130},
+    { label: "다운로드", name: "t7", width: 70, formatter : btn_dtl}
+  ],
+  loadonce : true,
+  viewrecords: true,
+  height: 510,
+  rowTotal: -1
+});
+function btn_dtl(cellValue, options, rowdata, action){
+  var html;
+    html = '<button type="button" class="btn_ico_only btn_down" onclick="' + cellValue + ' "title="다운로드">다운로드</button>';
+  return html;
+}
+
+jqgridInit();  
+ 
+</script>
+</body>
+</html>

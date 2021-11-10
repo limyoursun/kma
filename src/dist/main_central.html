@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont main">
+    <div class="flex_wrap f_sb">
+      <div class="section">
+         <div class="tit">
+            <h2>실시간 수신현황 하하하하햐</h2>
+         </div>
+         <div class="gis_wrap">
+            <!-- <div class="evt_info">
+               <dl class="dot_dl_list">
+                  <dt>발생시각</dt>
+                  <dd>2020-08-12 16:20:34</dd>
+                  <dt>규모</dt>
+                  <dd>2.0</dd>
+                  <dt>발생위치</dt>
+                  <dd>경북 포항시 북구 북쪽 9㎞ 지역</dd>
+               </dl>
+            </div> -->
+            <div class="num">
+               <p>전체관측소 : <span>105</span>개소</p>
+            </div>
+            <div class="gis_area">
+               <img src="http://placehold.it/600x650" width="100%" height="100%" alt="지도 영역" />
+               <i class="i_status i_ok" style="left:100px;top:200px;">정상</i>     
+               <i class="i_status i_all" style="left:100px;top:300px;">미수신</i>     
+               <i class="i_status i_mma" style="left:200px;top:300px;">미수신(MMA)</i>     
+               <i class="i_status i_miniseed" style="left:200px;top:450px;">미수신(mini-SEED)</i>     
+               <i class="i_status i_check" style="left:200px;top:350px;">점검중</i>
+               <div class="layer">
+                  <div class="tit">
+                     <h3>경기-분당(BAG)</h3>
+                     <button type="button" class="axi btn_close">닫기</button>
+                  </div>
+                  <div class="body">
+                     <dl class="dot_dl_list">
+                        <dt>수신상태</dt>
+                        <dd class="divide">
+                           <dl class="dash_dl_list">
+                              <dt>MMA</dt>
+                              <dd class="i_status_in i_ok">정상</dd>
+                              <dt>mini-SEED</dt>
+                              <dd class="i_status_in i_ok">정상</dd>
+                           </dl>
+                        </dd>
+                        <dt>발생시각</dt>
+                        <dd>2019-05-06 12:23:34</dd>
+                        <dt>확인시각</dt>
+                        <dd>2019-05-06 12:23:34</dd>
+                     </dl>
+                  </div>
+               </div>
+            </div>
+            <div class="legend">
+               <h3>범례</h3>
+               <ul>
+                  <li class="i_status i_ok">정상</li>
+                  <li class="i_status i_all">미수신(전체)</li>
+                  <li class="i_status i_mma">미수신(MMA)</li>
+                  <li class="i_status i_miniseed">미수신(mini-SEED)</li>
+                  <li class="i_status i_check">점검중</li>
+               </ul>
+            </div>            
+        </div>
+      </div>
+      <div class="section section_r">
+         <div class="sel_loc">
+            <div class="tit">
+               <h2>지역선택</h2>
+            </div>
+            <div class="flex_wrap">
+               <button type="button" class="loc_central">중앙통제소</button>
+               <ul class="list_loc">
+                  <li><button type="button">서울지역</button></li>
+                  <li><button type="button">인천지역</button></li>
+                  <li><button type="button">경기지역</button></li>
+                  <li><button type="button">강원지역</button></li>
+                  <li><button type="button">전북지역</button></li>
+                  <li><button type="button" class="on">전남지역</button></li>
+                  <li><button type="button">경북지역</button></li>
+                  <li><button type="button">경남지역</button></li>
+                  <li><button type="button">충청지역</button></li>
+                  <li><button type="button">인천기지</button></li>
+                  <li><button type="button">삼척기지</button></li>
+                  <li><button type="button">통영기지</button></li>
+                  <li><button type="button">평택기지</button></li>
+                  <li><button type="button">제주LNG</button></li>
+               </ul>
+            </div>
+         </div>
+         <div class="article">
+            <div class="tit">
+               <h2>이벤트 발생정보</h2>
+               <div class="btn_wrap">
+                  <div class="divide">
+                     <select name="" id=""><option value="">전체</option></select>
+                  </div>
+                  <button type="button" class="btn btn_gray">일괄확인</button>
+               </div>
+            </div>
+            <div class="tbl_wrap">
+               <table id="jqGrid1" class="jq-grid"></table>
+            </div>
+         </div>
+         <div class="article occur">
+            <div class="tit">
+               <h2>장애발생현황</h2>
+               <div class="btn_wrap">
+                  <div class="divide">
+                     <select name="" id=""><option value="">전체</option></select>
+                     <span class="stats_receive">
+                        <input type="checkbox" id="all"> <label for="all">미수신(전체)</label>
+                        <input type="checkbox" id="mini-SEED"> <label for="mini-SEED">미수신(mini-SEED)</label>
+                        <input type="checkbox" id="mma"> <label for="mma">미수신(MMA)</label>
+                     </span>
+                  </div>
+                  <button type="button" class="btn btn_gray">일괄확인</button>
+               </div>
+            </div>
+            <div class="tbl_wrap">
+               <table id="jqGrid2" class="jq-grid"></table>
+            </div>
+         </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+<script>
+function evtDivision(cellValue, options, rowdata, action){
+   var html, txt = "";
+   switch (cellValue) {
+   case "evt1": 
+      txt = "관심";        
+      break;
+   case "evt2": 
+      txt = "주의";        
+      break;
+   case "evt3": 
+      txt = "경계";        
+      break;
+   default:
+      txt = "심각";        
+      break;
+   }
+   html = '<span class="tbl_tag_evt ' + cellValue+'">'+ txt +'</span>';
+   return html;
+}
+function dataSink(cellValue, options, rowdata, action){
+   var html, txt = "";
+   switch (cellValue) {
+   case "all": 
+      txt = "전체";        
+      break;
+   case "mini-SEED": 
+      txt = "mini-SEED";        
+      break;
+   default : 
+      txt = "MMA";        
+      break;
+   }
+   html = '<span class="tbl_tag ' + cellValue+'">'+ txt +'</span>';
+   return html;
+}
+function btn_confirm(cellValue, options, rowdata, action){
+   var html;
+   if (cellValue === "미확인"){
+      html = '<button type="button" class="btn btn_s btn_pinkline" onclick="' + cellValue + ' "title="미확인">미확인</button>';
+   }else{
+      html = cellValue;
+   }
+   return html;
+}
+function btn_dtl(cellValue, options, rowdata, action){
+   var html;
+   html = '<button type="button" class="btn_ico_only btn_dtl" onclick="' + cellValue + ' "title="상세보기">상세보기</button>';
+   return html;
+}
+var mydata1=[
+  {"status":'unconfirmed',"t1":"evt1","t2":"경기","t3":"발안","t4":"BAG","t5":"2013-05-15 22:12:32","t6":"6.068","t7":"-","t8":"미확인"},
+  {"status":'confirmed',"t1":"evt2","t2":"경기","t3":"분당","t4":"BOG","t5":"2013-05-15 22:12:32","t6":"7.002","t7":"홍길동","t8":"2020-09-10 12:34:56"},
+  {"status":'unconfirmed',"t1":"evt3","t2":"경기","t3":"발안","t4":"BAG","t5":"2013-05-15 22:12:32","t6":"6.068","t7":"-","t8":"미확인"},
+  {"status":'confirmed',"t1":"evt4","t2":"경기","t3":"분당","t4":"BOG","t5":"2013-05-15 22:12:32","t6":"7.002","t7":"홍길동","t8":"2020-09-10 12:34:56"}
+];
+var grid1 = $("#jqGrid1");
+grid1.jqGrid({
+  data: mydata1,
+  datatype: "local",
+  colModel: [
+   {name : 'status', hidden:true},
+   { label: "구분", name: 't1', width: 80, formatter:evtDivision},
+   { label: "지역", name: 't2', width: 80},
+   { label: "관측소명", name: 't3', width: 100 },
+   { label : "관측소코드", name: 't4', width: 80 },
+   { label : "발생시각", name: 't5',width: 130 },
+   { label : "PGA(gal)", name: 't6', width: 130},
+   { label : "확인자", name: 't7', width: 80},
+   { label: "확인시각", name: "t8", width: 120, formatter : btn_confirm}
+  ],
+  loadonce : true,
+  viewrecords: true,
+  height: 150,
+  rowTotal: -1,
+  loadComplete : function(idx, rowId){
+   var rowIds = $(this).jqGrid('getDataIDs');
+   $.each(
+      rowIds, function(idx,rowId){
+         var rowData = grid1.getRowData(rowId),
+            state = "";
+         if(rowData.status === 'unconfirmed') state = "unconfirmed";
+         grid1.jqGrid('setRowData', rowId, false, state);
+      }
+   )
+   }
+});
+var mydata2=[
+  {"status":'unconfirmed',"t1":"all","t2":"경기","t3":"광명","t5":"2019-05-06 12:23:34","t6":"-","t7":"미확인"},
+  {"status":'unconfirmed',"t1":"mini-SEED","t2":"경기","t3":"시흥","t5":"2019-05-06 12:23:34","t5":"-","t7":"미확인"},
+  {"status":'confirmed',"t1":"MMA","t2":"경기","t3":"부천","t5":"2019-05-06 12:23:34","t6":"홍길동","t7":"2019-05-06 12:34:56"}
+];
+var grid2 = $("#jqGrid2");
+grid2.jqGrid({
+    editurl: 'clientArray',
+    data: mydata2,
+    datatype: "local",
+    colModel: [
+      {name : 'status', hidden:true},
+      { label: "수신상태", name: 't1', width: 100, formatter: dataSink},
+      // { label: "수신상태", name: 't1', width: 140, cellattr: function () { return " class='t_tag_area'" }},
+      { label: "지역", name: 't2', width: 100 },
+      { label : "관측소", name: 't3', width: 110 },
+      { label : "관측소코드", name: 't4', width: 90 },
+      { label : "장애시간", name: 't5', width: 130 },
+      { label : "확인자", name: 't6', align: 'center',width: 80 },
+      { label : "확인시각", name: 't7', align: 'center', width: 130 , formatter : btn_confirm},
+      { label: "상세", name: "t8", width: 40, align: 'center',formatter : btn_dtl}
+    ],
+    loadonce : true,
+    viewrecords: true,
+    height: 250,
+    // multiselect: true,
+    rowTotal: -1,
+    loadComplete : function(idx, rowId){
+      var rowIds = $(this).jqGrid('getDataIDs');
+      $.each(
+        rowIds, function(idx,rowId){
+          var rowData = grid2.getRowData(rowId),
+              state = "";
+          if(rowData.status === 'unconfirmed') state = "unconfirmed";
+          grid2.jqGrid('setRowData', rowId, false, state);
+        }
+      )
+    }
+  });
+  jqgridInit();
+  
+
+
+jqgridInit();  
+ 
+</script>
+</body>
+</html>

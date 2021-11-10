@@ -1,0 +1,209 @@
+@@include('inc/top.html')
+<div class="wrap">
+   <div class="header">
+      @@include('inc/header.html')
+   </div>
+   <div class="cont main">
+      <div class="flex_wrap f_sb">
+         <div class="section">
+            <div class="tit">
+               <h2>사고정보</h2>
+            </div>
+            <div class="gis_wrap">
+               <div class="num">
+                  <p>전체관측소 : <span>105</span>개소</p>
+               </div>
+               <div class="gis_area">
+                  <img src="http://placehold.it/500x560" width="100%" height="100%" alt="지도 영역" />
+                  <i class="i_status i_ok" style="left:100px;top:200px;">산불</i>
+                  <i class="i_status i_all" style="left:100px;top:300px;">미수신</i>
+                  <i class="i_status i_ok" style="left:200px;top:300px;">미수신(MMA)</i>
+                  <i class="i_status i_ok" style="left:200px;top:450px;">미수신(mini-SEED)</i>
+                  <i class="i_status i_all" style="left:200px;top:350px;">점검중</i>
+                  <div class="layer" style="position:absolute;left:50px;top:50px;">
+                     <div class="tit">
+                        <h3>재난 구분 :</h3>
+                        <b class="t_red font_b i_status_in i_ok">산불</b>
+                        <button type="button" class="axi btn_close">닫기</button>
+                     </div>
+                     <div class="body">
+                        <dl class="dot_dl_list">
+                           <dt>발생지역</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                           <dt>사 고 명</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                           <dt>사고내용</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                        </dl>
+                     </div>
+                  </div>
+                  <div class="layer" style="position:absolute;left:150px;top:200px;">
+                     <div class="tit">
+                        <h3>재난 구분 :</h3>
+                        <b class="t_red font_b i_status_in i_all">화학</b>
+                        <button type="button" class="axi btn_close">닫기</button>
+                     </div>
+                     <div class="body">
+                        <dl class="dot_dl_list">
+                           <dt>발생지역</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                           <dt>사 고 명</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                           <dt>사고내용</dt>
+                           <dd>2019-05-06 12:23:34</dd>
+                        </dl>
+                     </div>
+                  </div>
+               </div>
+               <div class="legend">
+                  <h3>범례</h3>
+                  <ul>
+                     <li class="i_status i_ok">산불</li>
+                     <li class="i_status i_all">화학</li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="section section_r">
+            <div class="article">
+               <div class="tit">
+                  <h2>지역별 사고 통계</h2>
+                  <div>
+                     <select name="status">
+                        <option value="최근 10년">최근 10년</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="tbl_default th_rowspan">
+                  <table>
+                     <caption>훈련결과 제목 테이블</caption>
+                     <colgroup>
+                        <col width="100">
+                        <col width="80">
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                        <col class="fix_scroll">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th>지역</th>
+                           <th>구분</th>
+                           <th>누적기간</th>
+                           <th>발생건수</th>
+                           <th>인적피해</th>
+                           <th>사망자</th>
+                           <th>&nbsp;</th>
+                        </tr>
+                     </thead>
+                  </table>
+                  <div class="tbl_default tbl_scroll" style="height:350px">
+                     <table>
+                        <caption>훈련결과 내용 테이블</caption>
+                        <colgroup>
+                           <col width="100">
+                           <col width="80">
+                           <col width="*">
+                           <col width="100">
+                           <col width="100">
+                           <col width="100">
+                        </colgroup>
+                        <tbody>
+                           <tr>
+                              <td rowspan="2">서울</td>
+                              <td>산불</td>
+                              <td>2011 ~ 2021</td>
+                              <td>120</td>
+                              <td>40</td>
+                              <td>5</td>
+                           </tr>
+                           <tr>
+                              <td>화학</td>
+                              <td>2011 ~ 2021</td>
+                              <td>45</td>
+                              <td>15</td>
+                              <td>1</td>
+                           </tr>
+                        </tbody>
+                        <tbody>
+                           <tr>
+                              <td rowspan="2">부산</td>
+                              <td>산불</td>
+                              <td>2011 ~ 2021</td>
+                              <td>120</td>
+                              <td>40</td>
+                              <td>5</td>
+                           </tr>
+                           <tr>
+                              <td>화학</td>
+                              <td>2011 ~ 2021</td>
+                              <td>45</td>
+                              <td>15</td>
+                              <td>1</td>
+                           </tr>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <div class="article occur">
+               <div class="tit">
+                  <div>
+                     <h2>인적피해 유형별 통계</h2>
+                     <span>2011 ~ 2021</span>
+                  </div>
+                  <div>
+                     <select name="status">
+                        <option value="전체">전체</option>
+                     </select>
+                  </div>
+               </div>
+               <div class="tbl_default">
+                  <table>
+                     <caption>훈련결과 제목 테이블</caption>
+                     <colgroup>
+                        <col width="100">
+                        <col width="80">
+                        <col width="*">
+                        <col width="100">
+                        <col width="100">
+                        <col width="100">
+                     </colgroup>
+                     <thead>
+                        <tr>
+                           <th>지역</th>
+                           <th>구분</th>
+                           <th>누적기간</th>
+                           <th>발생건수</th>
+                           <th>인적피해</th>
+                           <th>사망자</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><span class="tbl_tag tag1">산불</span></td>
+                           <td>2011 ~ 2021</td>
+                           <td>120</td>
+                           <td>40</td>
+                           <td>5</td>
+                        </tr>
+                        <tr>
+                           <td><span class="tbl_tag tag2">화학</span></td>
+                           <td>2011 ~ 2021</td>
+                           <td>45</td>
+                           <td>15</td>
+                           <td>1</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   @@include('inc/footer.html')
+</div>
+</body>
+
+</html>

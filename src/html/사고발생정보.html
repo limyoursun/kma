@@ -1,0 +1,219 @@
+@@include('inc/top.html')
+<div class="wrap">
+  <div class="header">
+    @@include('inc/header.html')
+  </div>
+  <div class="cont center">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">재난사고 검색</a></li>
+        <li>사고발생 정보</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>사고발생 정보</b></h2>
+    </div>
+    <div class="section">
+      <div class="search">
+        <ul>
+          <li>
+            <span class="period period_multi">
+              <input type="text" name="date" class="date from" value="2021-01-01" dataformat="from" title="start_date">
+              <input type="text" name="date" class="date to" value="2021-01-01" dataformat="to" title="end_date">
+            </span>
+          </li>
+          <li>
+            <label for="type">재난유형</label>
+            <select id="type" title="재난유형">
+              <option value="">재난유형</option>
+            </select>
+          </li>          
+          <li>
+            <label for="locate">발생지역</label>
+            <input type="text" id="locate" placeholder="검색어" />
+            <button type="button" class="btn btn_blue">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tbl_wrap">
+        <div class="tbl_top">
+          <div class="btn_wrap">
+            <button type="button" class="btn_ico btn_greenline btn_excel font_b">엑셀저장</button>            
+          </div>
+        </div>
+        <table class="tbl_default">
+          <caption>사고 발생 정보</caption>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>재난유형</th>
+              <th>발생시각</th>
+              <th>위도</th>
+              <th>경도</th>
+              <th>사고명</th>
+              <th>발생위치</th>
+              <th>사고원인</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        @@include('inc/paginate.html')
+      </div>
+    </div>
+  </div>
+  @@include('inc/footer.html')
+</div>
+</body>
+</html>

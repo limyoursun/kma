@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont center">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">재난사고 검색</a></li>
+        <li><a href="#">사고발생 정보</a></li>
+        <li>상세보기</li>
+      </ul>
+    </div>
+    <div class="tit flex_wrap f_sb">
+      <h2><b>사고발생 정보 상세보기</b></h2>
+      <div>
+        <button type="button" class="btn btn_blueline">목록</button>
+      </div>
+    </div>
+    <div class="flex_wrap f_sb eqEvt_dtl">
+      <div class="section">
+        <table class="tbl_row">
+          <tr>
+            <th scope="row">지진번호</th>
+            <td colspan="3">2020081216</td>
+          </tr>
+          <tr>
+            <th scope="row">발생시각</th>
+            <td>2018-08-05 12:34:56</td>
+            <th scope="row">규모</th>
+            <td>2.0</td>
+          </tr>
+          <tr>
+            <th scope="row">발생위치</th>
+            <td colspan="3">경북 포항시 북구 북쪽 9㎞ 지역
+            </td>
+          </tr>
+        </table>
+        <div class="gis_wrap">
+          <div class="gis_area">
+            <img src="http://placehold.it/410x550" width="100%" height="100%" alt="지도 영역" />
+            <i class="i_status" mag="8" style="left:100px;top:200px;">Ⅶ</i>
+          </div>
+        </div>
+      </div>
+      <div class="section section_r">
+        <div>
+          <table class="tbl_row tbl_blueTop">
+            <colgroup>
+              <col width="60">
+              <col width="100">
+              <col width="60">
+              <col width="100">
+           </colgroup>
+            <tr>
+              <th scope="row">행정구역</th>
+              <td>강원도</td>
+              <th scope="row">사고원인</th>
+              <td>장비부식 및 노후화</td>
+            </tr>
+            <tr>
+              <th scope="row">사고시작일시</th>
+              <td>2018-08-05 12:34</td>
+              <th scope="row">사고종료일시</th>
+              <td>2018-08-05 12:34</td>
+            </tr>
+            <tr>
+              <th scope="row">사고내용</th>
+              <td colspan="3">· 운전 정지 중인 냉동기의 압축기 급유밸브에서 암모니아 가스가 누출되는 것을 안전관리자가 인지하고, 약 3분 이내 급유밸브를 차단함.(누출량 : 약25L 추정)<br>
+                - 사고구분:작업공정<br>
+                - 사고형태:누출 
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">위도</th>
+              <td>35.1394638</td>
+              <th scope="row">경도</th>
+              <td>126.7937183</td>
+            </tr>
+            <tr>
+              <th scope="row">이적피해-사망</th>
+              <td>정선</td>
+              <th scope="row">이적피해-실종</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th scope="row">이적피해-부상</th>
+              <td>PF/말뚝기초</td>
+              <th scope="row">이적피해-경상</th>
+              <td>S4/ 철골 콘크리트 골조</td>
+            </tr>
+            <tr>
+              <th scope="row">이적피해-기타</th>
+              <td>5</td>
+              <th scope="row">사고물질</th>
+              <td>암모니아</td>
+            </tr>
+            <tr>
+              <th scope="row">대응-문제점</th>
+              <td colspan="3">현장 화학사고 대응 수습체계 한계<br>
+                &nbsp;- 물질종류 및 역할에 따라 환경부(유해화학물질), 지경부(독성가스), 고용부(중대산업사고) 등으로 소관이 구분되어 있어 신속한 사고대응에 한계 노출<br>
+                &nbsp;- 유해화학물질 유출사고 매뉴얼상 환경부의 역할이 지원인지 주무인지 모호하거나 불명확하고 중앙사고수습본부 역할 모호
+              사고 발생에 따른 예방대책 필요성 제기
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">대응-개선책</th>
+              <td colspan="3">- 유해화학물질 유출사고 대응 표준매뉴얼 개선<br>
+                - 주관부처의 장이 임명, 현장의 상황을 평가하고 사고대응 기능을 조정 지원<br>
+                - 유해화학물질 사고 안전관리 개선대책 발표 및 관련 법령 개정 제도화<br>
+                - 장외영향평가제 도입, 유독물질 영업 허가제 및 관리권환 환수, 하도급 관리 강화, 영업정지?과징금 등 책임 강화<br>
+                - 위해관리계획 도입, 화학사고 즉시 신고 등 대응체계 강화, 특별관리지역 지정 및 전담기관(화학재난합동방재센터, 화학물질안전원) 설치<br>
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">대응-이행상황</th>
+              <td colspan="3">(산자부 노동부) 고압가스안전관리법 산업안전보건법 위반여부 조사<br>
+                (국민안전처) 산자부, 노동부 조사결과 및 조치사항 모니터링 등
+                </td>
+            </tr>
+            <tr>
+              <th scope="row">대응-조치내용</th>
+              <td colspan="3">[09.27]<br>
+                16:20 1차 주민 대피령 발령(구미시)<br>
+                17:00-15 사고상황 접수 및 현장확인 지시(환경부)<br>
+                17:20 사고상황 접수(국립환경과학원)<br>
+                17:30 환경부 ?중앙사고수습본부? 설치?운영 (“경계”경보 발령)<br>
+                17:35 사고현장 도착 및 사고상황 파악(대구지방환경청)<br>
+                [09.28]<br>
+                00:00 특수화학분석차량 및 현장요원 구미 사고현장 도착(국립환경과학원)<br>
+                00:30 사고지점 탐지분석 결과 불화수소 가스 존재 확인(국립환경과학원)<br>
+                02:00 사고지점 주변(약 500m) pH 측정, 불검출(국립환경과학원)<br>
+                02:30 사고지점 탐지분석 결과 불화수소 가스 존재 확인(국립환경과학원)</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+</body>
+
+</html>

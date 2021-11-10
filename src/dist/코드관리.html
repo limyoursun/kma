@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont center sys_code">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">시스템관리</a></li>
+        <li>공통코드 관리</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>공통코드관리</b></h2>
+    </div>
+    <div class="link_h">
+      <div class="section tbl_wrap">
+        <div class="tit_h3">
+          <h3>그룹코드</h3>
+          <div class="btn_wrap btn_wrap_s">
+            <button type="button" class="btn_axi btn_grayline btn_add"><b>추가</b></button>
+            <button type="button" class="btn_axi btn_grayline btn_del"><b>삭제</b></button>
+            <button type="button" class="btn btn_white"><b>미사용</b></button>
+          </div>
+        </div>        
+        <table class="tbl_default">
+          <caption>사고 발생 정보</caption>
+          <thead>
+            <tr>
+              <th>선택</th>
+              <th>코드</th>
+              <th>그룹코드</th>
+              <th>설명</th>
+              <th>사용여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>관리자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>관리자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginate">
+  <a href="#" class="first" title="처음">〈〈</a>
+  <a href="#" class="pre" title="이전">〈</a>
+  <span>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <strong>6</strong>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">9</a>
+  <a href="#">10</a>
+  </span>
+  <a href="#" class="next" title="다음">〉</a>
+  <a href="#" class="last" title="마지막">〉〉</a>
+</div>
+      </div>
+      <div class="arrow"></div>
+      <div class="section tbl_wrap">
+        <div class="tit_h3">
+          <h3>상세코드</h3>
+          <div class="btn_wrap btn_wrap_s">
+            <button type="button" class="btn_axi btn_grayline btn_add"><b>추가</b></button>
+            <button type="button" class="btn_axi btn_grayline btn_del"><b>삭제</b></button>
+            <button type="button" class="btn btn_white"><b>미사용</b></button>
+          </div>
+        </div>        
+        <table class="tbl_default">
+          <caption>사고 발생 정보</caption>
+          <thead>
+            <tr>
+              <th>선택</th>
+              <th>코드</th>
+              <th>그룹코드</th>
+              <th>설명</th>
+              <th>사용여부</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>관리자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>관리자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+            <tr>
+              <td><input type="checkbox"></td>
+              <td>사용자</td>
+              <td>ID NAME</td>
+              <td>홍길동</td>
+              <td>중앙</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginate">
+  <a href="#" class="first" title="처음">〈〈</a>
+  <a href="#" class="pre" title="이전">〈</a>
+  <span>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <strong>6</strong>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">9</a>
+  <a href="#">10</a>
+  </span>
+  <a href="#" class="next" title="다음">〉</a>
+  <a href="#" class="last" title="마지막">〉〉</a>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+</body>
+</html>

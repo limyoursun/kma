@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">지진발생현황</a></li>
+        <li>임의구간 자료조회</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>임의구간</b> 자료조회</h2>
+      <button type="button" class="btn btn_gray">목록</button>
+    </div>
+    <div class="section">
+      <div class="search">
+        <ul>
+          <li>
+            <select name="" id="" title="지역본부">
+              <option value="">지역본부</option>
+            </select>
+          </li>
+          <li>
+            <select name="" id="" title="관측소 전체">
+              <option value="">관측소 전체</option>
+            </select>
+          </li>
+          <li>
+          </li>
+          <li class="in_label">
+            <span class="label">구간선택</span>
+            <span class="times">
+							<input type="text" name="date" class="timeform" dataformat="timepic" />
+						</span>
+            <label for="m1"><input type="radio" name="wave_m" id="m1"/>1분</label>
+            <label for="m3"><input type="radio" name="wave_m" id="m3"/>3분</label>
+            <label for="m5"><input type="radio" name="wave_m" id="m5" checked/>5분</label>
+          </li>
+          <li class="in_label">
+            <span class="label">구분</span>
+            <label for="PGA"><input type="radio" name="wave_type" id="PGA"/>PGA</label>
+            <label for="mini-SEED(100)"><input type="radio" name="wave_type" id="mini-SEED(100)"/>mini-SEED(100)</label>
+            <label for="mini-SEED(20)"><input type="radio" name="wave_type" id="mini-SEED(20)"/>mini-SEED(20)</label>
+          </li>
+          <li>
+            <button type="button" class="btn btn_gray">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="chart_wrap">
+        <div class="chart_araa">
+          <img src="http://placehold.it/1300x480" width="100%" height="480px" alt="차트영역">
+        </div>
+        <div class="paginate">
+  <a href="#" class="first" title="처음">〈〈</a>
+  <a href="#" class="pre" title="이전">〈</a>
+  <span>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <strong>6</strong>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">9</a>
+  <a href="#">10</a>
+  </span>
+  <a href="#" class="next" title="다음">〉</a>
+  <a href="#" class="last" title="마지막">〉〉</a>
+</div>
+      </div>
+
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+<script>
+var mydata1=[
+  {"t1":"경기","t2":"발안","t3":"BAG","t4":"2013-05-15 22:12:32","t5":"0.008","t6":"2.59932","t7":"Ⅱ"},
+  {"t1":"경기","t2":"분당","t3":"BOG","t4":"2013-05-15 22:12:32","t5":"0.008","t6":"2.59932","t7":"Ⅱ"}
+];
+var grid1 = $("#jqGrid1");
+grid1.jqGrid({
+    data: mydata1,
+    datatype: "local",
+    colModel: [
+      { label: "지역", name: 't1', width: 80},
+      { label: "관측소명", name: 't2', width: 100 },
+      { label : "관측소코드", name: 't3', width: 80 },
+      { label : "감지시간", name: 't4', width: 130 },
+      { label : "진앙거리(㎞)", name: 't5',width: 80 },
+      { label : "최대가속도(gal)", name: 't6', width: 80},
+      { label: "진도", name: "t7", width: 80}
+    ],
+    loadonce : true,
+    viewrecords: true,
+    height: 510,
+    rowTotal: -1
+  });
+var mydata2=[
+  {"t1":"경기","t2":"발안","t3":"BAG","t4":"aa.tar","t5":"2013-05-15 22:12:32","t6":"2013-05-15 22:12:32","t7":"다운로드경로"},
+  {"t1":"경기","t2":"분당","t3":"BOG","t4":"aa.tar","t5":"2013-05-15 22:12:32","t6":"2013-05-15 22:12:32","t7":"다운로드경로"}
+];
+var grid2 = $("#jqGrid2");
+grid2.jqGrid({
+  data: mydata2,
+  datatype: "local",
+  colModel: [
+    { label: "지역", name: 't1', width: 80},
+    { label: "관측소명", name: 't2', width: 100 },
+    { label : "관측소코드", name: 't3', width: 80 },
+    { label : "이벤트파일명", name: 't4', width: 180, align:"left"},
+    { label : "생성시간", name: 't5',width: 130 },
+    { label : "전송시간", name: 't6', width: 130},
+    { label: "다운로드", name: "t7", width: 70, formatter : btn_dtl}
+  ],
+  loadonce : true,
+  viewrecords: true,
+  height: 510,
+  rowTotal: -1
+});
+function btn_dtl(cellValue, options, rowdata, action){
+  var html;
+    html = '<button type="button" class="btn_ico_only btn_down" onclick="' + cellValue + ' "title="다운로드">다운로드</button>';
+  return html;
+}
+
+jqgridInit();  
+ 
+</script>
+</body>
+</html>

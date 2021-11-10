@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>지진통합관리시스템</title>
+  <link rel="icon" href="../images/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../plugins/axicon/axicon.min.css" />
+  <link rel="stylesheet" href="../plugins/jquery-ui/themes/base/jquery-ui.min.css" />
+  <link rel="stylesheet" href="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.css" />
+  <link rel="stylesheet" href="../plugins/jqGrid/css/ui.jqgrid.css" />
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/sub.css">
+  <link rel="stylesheet" href="../css/pop.css">
+  <script src="../plugins/jquery/dist/jquery.min.js"></script>
+  <script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
+  <script src="../plugins/jquery-ui/ui/i18n/datepicker-ko.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/jquery-ui-timepicker-addon.min.js"></script>
+  <script src="../plugins/jqueryui-timepicker-addon/dist/i18n/jquery-ui-timepicker-ko.js"></script>
+  <script src="../plugins/jqGrid/js/jquery.jqGrid.min.js"></script>
+  <script src="../plugins/jqGrid/js/i18n/grid.locale-kr.js"></script>
+  <script src="../js/ui_common.js"></script>
+  <link rel="stylesheet" href="../css/ol/ol.css">
+</head>
+<body>
+<div class="wrap">
+  <div class="header">
+    <div class="util">
+  <div class="center">
+    <span>관리자님 반갑습니다.</span>
+    <ul class="util_list">
+      <li><button type="button">내정보</button></li>
+      <li><button type="button">로그아웃</button></li>
+    </ul>
+  </div>
+</div>
+<div class="center nav">
+  <h1><a href="#"><img src="../images/logo.png" alt="지능형 상황관리 시스템 로고"></a></h1>
+  <ul class="gnb" role="navigation">
+    <li><a href="../dist/monitoring_dataSink.html">재난사고 검색</a>
+    </li>
+    <li class="on"><a href="#">재난사고 통계</a>
+    </li>
+    <li><a href="./../사용자관리.html">시스템관리</a>
+      <ul class="sub">
+        <li><a href="./../사용자관리.html">사용자관리</a></li>
+        <li><a href="#">공통코드관리</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+  </div>
+  <div class="cont center">
+    <div class="locate">
+      <ul>
+        <li><a href="#">메인</a></li>
+        <li><a href="#">재난사고 검색</a></li>
+        <li>사고발생 정보</li>
+      </ul>
+    </div>
+    <div class="tit">
+      <h2><b>사고발생 정보</b></h2>
+    </div>
+    <div class="section">
+      <div class="search">
+        <ul>
+          <li>
+            <span class="period period_multi">
+              <input type="text" name="date" class="date from" value="2021-01-01" dataformat="from" title="start_date">
+              <input type="text" name="date" class="date to" value="2021-01-01" dataformat="to" title="end_date">
+            </span>
+          </li>
+          <li>
+            <label for="type">재난유형</label>
+            <select id="type" title="재난유형">
+              <option value="">재난유형</option>
+            </select>
+          </li>          
+          <li>
+            <label for="locate">발생지역</label>
+            <input type="text" id="locate" placeholder="검색어" />
+            <button type="button" class="btn btn_blue">검색</button>
+          </li>
+        </ul>
+      </div>
+      <div class="tbl_wrap">
+        <div class="tbl_top">
+          <div class="btn_wrap">
+            <button type="button" class="btn_ico btn_greenline btn_excel font_b">엑셀저장</button>            
+          </div>
+        </div>
+        <table class="tbl_default">
+          <caption>사고 발생 정보</caption>
+          <thead>
+            <tr>
+              <th>번호</th>
+              <th>재난유형</th>
+              <th>발생시각</th>
+              <th>위도</th>
+              <th>경도</th>
+              <th>사고명</th>
+              <th>발생위치</th>
+              <th>사고원인</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>6</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>7</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>8</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>9</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>10</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>11</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>12</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>13</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>14</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>15</td>
+              <td>산불</td>
+              <td>2013-05-15 22:12:32</td>
+              <td>38.82</td>
+              <td>125.56</td>
+              <td></td>
+              <td>전북 군산시 어청도 남서쪽 50㎞</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="paginate">
+  <a href="#" class="first" title="처음">〈〈</a>
+  <a href="#" class="pre" title="이전">〈</a>
+  <span>
+  <a href="#">1</a>
+  <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <strong>6</strong>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">9</a>
+  <a href="#">10</a>
+  </span>
+  <a href="#" class="next" title="다음">〉</a>
+  <a href="#" class="last" title="마지막">〉〉</a>
+</div>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+  <p class="alignC">Copyright &copy;2020 KMA. All Rights RESERVED</p>
+</div>
+
+</div>
+</body>
+</html>
